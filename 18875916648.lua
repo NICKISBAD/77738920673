@@ -55,7 +55,7 @@ local function createItemButton(item, spawnTime)
         Name = item.Name .. " (Spawned at: " .. spawnTime .. ")", -- Include spawn time in the button name
         Callback = function()
             local Handle = item:FindFirstChild("Handle") or item:FindFirstChild("Main") or item:FindFirstChild("Back") or item:FindFirstChild("bone") or item:FindFirstChild("Middle")
-            Handle = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame --Adjust the part name accordingly
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Handle.CFrame wait(0.5)
         end
     })
 end
@@ -411,7 +411,7 @@ button3("Grab all items (laggy)", function()
     for i,v in pairs(game.Workspace.Items:GetChildren()) do
       if v:IsA"Tool" then
           local Handle = v:FindFirstChild("Handle") or v:FindFirstChild("Main") or v:FindFirstChild("Back") or v:FindFirstChild("bone") or v:FindFirstChild("Middle")
-          Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Handle.CFrame wait(0.5)
         end
     end
 end)
@@ -429,7 +429,7 @@ local function createItemButton2(item, spawnTime)
         Name = item.Name .. " (Spawned at: " .. spawnTime .. ")",
         Callback = function()
             local Handle2 = item:FindFirstChild("Handle") or item:FindFirstChild("Main") or item:FindFirstChild("Back") or item:FindFirstChild("bone") or item:FindFirstChild("Middle")
-            Handle2 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Handle2.CFrame wait(0.5)
         end
     })
 end
