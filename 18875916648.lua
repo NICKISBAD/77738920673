@@ -2,9 +2,9 @@ local blacklist = { "Arrow", "Rokakaka Fruit", "DIO's Diary", "Requiem Arrow", "
 
 local function rareitemsound()
     local sound = Instance.new("Sound")
-    sound.SoundId = "rbxassetid://8462659577"
+    sound.SoundId = "rbxassetid://136075117"
     sound.Parent = game.Workspace
-    sound.EmitterSize = 5
+    sound.EmitterSize = 4
     sound.Volume = 10
     sound:Play()
     wait(0.2)
@@ -406,6 +406,7 @@ button3("Grab all items (laggy)", function()
       if v:IsA"Tool" then
           local handle = v:FindFirstChild("Handle") or v:FindFirstChild("Cover")
           handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        end
     end
 end)
 
