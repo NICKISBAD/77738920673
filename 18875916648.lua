@@ -393,8 +393,6 @@ local plr2 = game.Players.LocalPlayer.Character.Humanoid
 
 local hp = Tab3:AddLabel('Player Health: hey you found an easter egg💀 ')
 
-wait(10)
-
 hp:Set("Player Health: "..plr2.Health)
 
 spawn(function()
