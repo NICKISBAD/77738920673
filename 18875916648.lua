@@ -6,7 +6,7 @@ local function rareitemsound()
     sound.Parent = game.Workspace
     sound.Volume = 10
     sound:Play()
-    wait(0.2)
+    wait(1)
     sound:Destroy()
 end
 
