@@ -401,12 +401,11 @@ spawn(function()
     end
 end)
 
-button("Grab all items (laggy)", function()
+button3("Grab all items (laggy)", function()
     for i,v in pairs(game.Workspace.Items:GetChildren()) do
       if v:IsA"Tool" then
           local handle = v:FindFirstChild("Handle") or v:FindFirstChild("Cover")
           handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        end
     end
 end)
 
