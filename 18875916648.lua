@@ -54,7 +54,8 @@ local function createItemButton(item, spawnTime)
     Tab1:AddButton({
         Name = item.Name .. " (Spawned at: " .. spawnTime .. ")", -- Include spawn time in the button name
         Callback = function()
-            item.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame --Adjust the part name accordingly
+            local Handle = item:FindFirstChild("Handle") or item:FindFirstChild("Main") or item:FindFirstChild("Back") or item:FindFirstChild("bone") or item:FindFirstChild("Middle")
+            Handle = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame --Adjust the part name accordingly
         end
     })
 end
@@ -183,7 +184,9 @@ Tab2:AddToggle({
 spawn(function()
     while wait() do
         if _G.AutoDIO then
-            repeat Damage("DIO [BOSS") wait() until game.Workspace['DIO [BOSS]'].Humanoid.Health <= 0
+                if game.Workspace:FindFirstChild("DIO [BOSS]") then
+                repeat Damage("DIO [BOSS") wait() until not game.Workspace['DIO [BOSS]']
+            end
         end
     end
 end)
@@ -191,7 +194,9 @@ end)
 spawn(function()
     while wait() do
         if _G.AutoBrando then
-            repeat Damage() Damage("DIO BRANDO [BOSS]") wait() until game.Workspace['DIO BRANDO [BOSS]'].Humanoid.Health <= 0
+                if game.Workspace:FindFirstChild("DIO BRANDO [BOSS]") then
+                repeat Damage("DIO BRANDO [BOSS]") wait() until not game.Workspace:FindFirstChild('DIO BRANDO [BOSS]')
+            end
         end
     end
 end)
@@ -199,7 +204,9 @@ end)
 spawn(function()
     while wait() do
         if _G.AutoSam then
-            repeat Damage() Damage("Brazillian Samurai [BOSS]") wait() until game.Workspace['Brazillian Samurai'].Humanoid.Health <= 0
+            if game.Workspace:FindFirstChild("Brazillian Samurai [BOSS]") then
+                repeat Damage("Brazillian Samurai [BOSS]") wait() until not game.Workspace:FindFirstChild("Brazillian Samurai")
+            end
         end
     end
 end)
@@ -403,8 +410,8 @@ end)
 button3("Grab all items (laggy)", function()
     for i,v in pairs(game.Workspace.Items:GetChildren()) do
       if v:IsA"Tool" then
-          local handle = v:FindFirstChild("Handle") or v:FindFirstChild("Cover")
-          handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+          local Handle = v:FindFirstChild("Handle") or v:FindFirstChild("Main") or v:FindFirstChild("Back") or v:FindFirstChild("bone") or v:FindFirstChild("Middle")
+          Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
     end
 end)
@@ -421,7 +428,8 @@ local function createItemButton2(item, spawnTime)
     Tab4:AddButton({
         Name = item.Name .. " (Spawned at: " .. spawnTime .. ")",
         Callback = function()
-            item.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+            local Handle2 = item:FindFirstChild("Handle") or item:FindFirstChild("Main") or item:FindFirstChild("Back") or item:FindFirstChild("bone") or item:FindFirstChild("Middle")
+            Handle2 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         end
     })
 end
