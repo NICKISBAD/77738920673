@@ -4,7 +4,6 @@ local function rareitemsound()
     local sound = Instance.new("Sound")
     sound.SoundId = "rbxassetid://136075117"
     sound.Parent = game.Workspace
-    sound.EmitterSize = 4
     sound.Volume = 10
     sound:Play()
     wait(0.2)
